@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: black;
+  display: flex;
+  flex-flow: column;
+  width: 460px;
+  padding: 30px 30px;
+  border-radius: 10px;
+}
+
+.display {
+  background-color: white;
+  height: 50px;
+  padding: 10px 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+button {
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+}
+
+.operations button {
+  background-color: orange;
+}
+
+.operations .clear {
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  padding: 5px 20px;
+  background-color: white;
+}
+
+.operations .backspace {
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  padding: 5px 20px;
+  background-color: white;
+}

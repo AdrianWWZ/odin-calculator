@@ -38,6 +38,14 @@ clear.addEventListener("click", () => {
   display.innerText = "";
 });
 
+const backspace = document.querySelector(".backspace");
+backspace.addEventListener("click", () => {
+  display.innerText = display.innerText.substring(
+    0,
+    display.innerText.length - 1
+  );
+});
+
 const equal = document.querySelector(".equal");
 equal.addEventListener("click", () => {
   let calculation = display.innerText.match(/\d+\.\d+|\d+|[^0-9]/g);
