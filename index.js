@@ -18,10 +18,15 @@ const operate = (operation, num1, num2) => {
 };
 
 const display = document.querySelector(".display");
+let isResult = false;
 
 const numbers = document.querySelectorAll(".number");
 numbers.forEach((number) => {
   number.addEventListener("click", (e) => {
+    if (isResult) {
+      display.innerText = "";
+      isResult = false;
+    }
     display.innerText += e.target.innerText;
   });
 });
@@ -30,6 +35,7 @@ const operations = document.querySelectorAll(".operation");
 operations.forEach((operation) => {
   operation.addEventListener("click", (e) => {
     display.innerText += e.target.innerText;
+    isResult = false;
   });
 });
 
@@ -88,6 +94,7 @@ equal.addEventListener("click", () => {
     }
   }
   display.innerText = calculation[0];
+  isResult = true;
 });
 
 const calculate = (arr, i) => {
