@@ -49,6 +49,7 @@ backspace.addEventListener("click", () => {
 const equal = document.querySelector(".equal");
 equal.addEventListener("click", () => {
   let calculation = display.innerText.match(/\d+\.\d+|\d+|[^0-9]/g);
+  let hasDivMul = false;
 
   while (calculation[1]) {
     for (let i = 0; i < calculation.length; i++) {
@@ -64,7 +65,19 @@ equal.addEventListener("click", () => {
         } else if (calculation[i] === "/") {
           calculation = calculate(calculation, i);
           break;
-        } else if (calculation[i] === "+") {
+        }
+
+        calculation.forEach((op) => {
+          if (op === "*" || op === "/") {
+            hasDivMul = true;
+          }
+        });
+        if (hasDivMul === true) {
+          hasDivMul = false;
+          continue;
+        }
+
+        if (calculation[i] === "+") {
           calculation = calculate(calculation, i);
           break;
         } else if (calculation[i] === "-") {
